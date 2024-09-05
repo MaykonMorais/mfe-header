@@ -1,15 +1,37 @@
+/** @jsxImportSource @emotion/react */
 import React from "react";
+import {
+  HeaderContainer,
+  TopSection,
+  Logo,
+  SearchBar,
+  ButtonContainer,
+  Button,
+  Navbar,
+  NavLink,
+} from "./styles";
 
-import { HeaderProps } from "./types";
-import styles from "./styles";
-
-const Header: React.FC<HeaderProps> = ({ title }) => {
+const Header = () => {
   return (
-    <div className="header">
-      <h1 className="lheader__title">{title} - Teste Header</h1>
+    <HeaderContainer>
+      <TopSection>
+        <Logo>Logo</Logo>
 
-      <style jsx>{styles}</style>
-    </div>
+        <SearchBar type="text" placeholder="Search..." />
+
+        <ButtonContainer>
+          <Button>Login</Button>
+          <Button>Create Account</Button>
+        </ButtonContainer>
+      </TopSection>
+
+      <Navbar>
+        <NavLink href="/home">Home</NavLink>
+        <NavLink href="/about">About</NavLink>
+        <NavLink href="/services">Services</NavLink>
+        <NavLink href="/contact">Contact</NavLink>
+      </Navbar>
+    </HeaderContainer>
   );
 };
 
